@@ -1,0 +1,42 @@
+
+.basket-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__quantity {
+    width: 100px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    font-size: 20px;
+    line-height: 1;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: blue;
+    color: #fff;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.basket-item--info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+
+  span {
+    font-weight: 400;
+  }
+}

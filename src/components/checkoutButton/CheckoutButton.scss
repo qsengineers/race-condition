@@ -1,0 +1,10 @@
+
+.checkout-button {
+  background-color: blue;
+  color: #fff;
+  width: 300px;
+
+  &[disabled] {
+    background-color: grey;
+  }
+}
