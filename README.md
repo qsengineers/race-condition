@@ -30,6 +30,8 @@ You should build a race condition solution to solve this problem.
 - If i click twice in a Plus or minus button, i want the application to make only 1 request
 - If i click on minus or plus button while the request is being done, another request should be done as soon as the current one finishes
   - Checkout button should be disabled while those 2 requests are not finished.
+- We need to know the value of response of latest started request.
+  - The latest started request is not always the latest finished request
 
 
 
