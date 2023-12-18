@@ -34,6 +34,9 @@ You should build a race condition solution to solve this problem.
   - The latest started request is not always the latest finished request
 
 
+## Deliveries
+- Please deploy the solution in a shared URL so i can see the results without needing to run.
+- Please fork this repository on your account to add diagrams and invite ronaldo.zanoni@qikserve.com, felipe.loge@qikserve.com and caio.ricci@qikserve.com.
 
 
 ## Project stack
