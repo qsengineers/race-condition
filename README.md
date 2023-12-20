@@ -36,7 +36,8 @@ You should build a race condition solution to solve this problem.
 
 ## Deliveries
 - Please deploy the solution in a shared URL so i can see the results without needing to run.
-- Please fork this repository on your account to add diagrams and invite ronaldo.zanoni@qikserve.com, felipe.loge@qikserve.com and caio.ricci@qikserve.com.
+- Please fork this repository on your account and invite ronaldo.zanoni@qikserve.com, felipe.loge@qikserve.com and caio.ricci@qikserve.com.
+- Open a PR with the changes you needed to do to complete this challenge.
 
 
 ## Project stack
