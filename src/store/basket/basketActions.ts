@@ -5,6 +5,7 @@ import axios from 'axios'
 
 import BasketItem from '../../models/BasketItem';
 import { IState } from '../rootReducer';
+import { BasketActionTypes } from './basketActionTypes';
 
 export function incrementItem(basketItem: BasketItem) {
   return (dispatch: Dispatch<Action>, getState: () => IState) => {
@@ -18,7 +19,7 @@ export function incrementItem(basketItem: BasketItem) {
     }
 
     dispatch({
-      type: 'calculating_basket',
+      type: BasketActionTypes.CALCULATING_BASKET,
       payload: true
     });
 
@@ -41,7 +42,7 @@ export function incrementItem(basketItem: BasketItem) {
 
 
     dispatch({
-      type: 'update-basket',
+      type: BasketActionTypes.UPDATE_BASKET,
       payload: basketItems
     });
 
@@ -49,13 +50,17 @@ export function incrementItem(basketItem: BasketItem) {
     axios.get('https://2486713dae314753ae6b0ff127002d12.api.mockbin.io/')
       .then(function () {
         dispatch({
-          type: 'update-basket-totals',
+          type: BasketActionTypes.UPDATE_BASKET_TOTALS,
           payload: newTotal
         });
       })
       .finally(() => {
         dispatch({
-          type: 'calculating_basket',
+          type: BasketActionTypes.FINISH_REQUEST,
+          payload: basketItem
+        });
+        dispatch({
+          type: BasketActionTypes.CALCULATING_BASKET,
           payload: false
         });
       })
@@ -84,7 +89,7 @@ export function decrementItem(basketItem: BasketItem) {
     }
 
     dispatch({
-      type: 'calculating_basket',
+      type: BasketActionTypes.CALCULATING_BASKET,
       payload: true
     });
 
@@ -106,7 +111,7 @@ export function decrementItem(basketItem: BasketItem) {
     }, 0);
 
     dispatch({
-      type: 'update-basket',
+      type: BasketActionTypes.UPDATE_BASKET,
       payload: basketItems
     });
 
@@ -114,16 +119,19 @@ export function decrementItem(basketItem: BasketItem) {
     axios.get('https://2486713dae314753ae6b0ff127002d12.api.mockbin.io/')
       .then(function () {
         dispatch({
-          type: 'update-basket-totals',
+          type: BasketActionTypes.UPDATE_BASKET_TOTALS,
           payload: newTotal
         });
       })
       .finally(() => {
         dispatch({
-          type: 'calculating_basket',
+          type: BasketActionTypes.FINISH_REQUEST,
+          payload: basketItem
+        });
+        dispatch({
+          type: BasketActionTypes.CALCULATING_BASKET,
           payload: false
         });
       })
-
   }
 }
