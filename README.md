@@ -21,6 +21,13 @@ To reproduce:
 - While the request is done, click to increase quantity again
 - You will notice another request will be done after 3 seconds and you will be able to click on "Checkout" button while its not done.
 - This could cause inconsistences as the total could change in the middle of a payment
+What we are doing to solve should be transparent to the end user.
+
+## An example of what should not happen.
+- Clicked once on plus button
+- Clicked again on plus button while the first request was in progress
+- The "Checkout" button was enabled between first and second request. Should not be as we knew there would be a second request because the click was while the first one was in progress.
+![race-condition-example](https://github.com/qsengineers/race-condition/assets/134649881/16dca8fd-0eb1-4893-b8d0-8ff23bc58118)
 
 
 # The solution
