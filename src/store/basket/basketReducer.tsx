@@ -9,10 +9,12 @@ export interface BasketState {
   calculatingBasketInApi: boolean;
   items: Array<BasketItem>,
   total: number
+  previousRequest: null | number
 }
 
 export const initialState: BasketState = {
   calculatingBasketInApi: false,
+  previousRequest: null,
   items: [
     new BasketItem(1, 'Burger 1', 100),
     new BasketItem(2, 'Burger 2', 200),
@@ -29,6 +31,11 @@ export default function basketReducer(
       return {
         ...state,
         calculatingBasketInApi: (action as ActionWithPayload<boolean>).payload
+      }
+    case 'previous_request':
+      return {
+        ...state,
+        previousRequest: (action as ActionWithPayload<number>).payload
       }
     case 'update-basket':
       return {
